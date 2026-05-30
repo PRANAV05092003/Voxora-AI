@@ -49,6 +49,9 @@ const config: Config = {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-jetbrains-mono)'],
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out',
         'fade-up': 'fade-up 0.5s ease-out',

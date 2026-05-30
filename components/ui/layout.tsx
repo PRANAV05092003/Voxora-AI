@@ -23,8 +23,9 @@ export function Container({
   )
 }
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+interface SectionProps extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
   delay?: number
+  children?: React.ReactNode
 }
 
 export function Section({ className, delay = 0, children, ...props }: SectionProps) {
@@ -35,7 +36,6 @@ export function Section({ className, delay = 0, children, ...props }: SectionPro
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, delay }}
       className={cn('py-16 md:py-24', className)}
-      {...props}
     >
       {children}
     </motion.section>

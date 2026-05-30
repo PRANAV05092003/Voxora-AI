@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Mic, Brain, Zap, Shield, Globe, Sparkles } from 'lucide-react'
 import { Navbar, Footer } from '@/components/layout'
 import { Button, Card, CardContent, Badge, Container, Section, Grid } from '@/components/ui'
-import { staggerContainer, staggerItem, fadeUp, floatAnimation } from '@/lib/motion'
+import { staggerContainer, staggerItem, fadeUp } from '@/lib/motion'
+import { HeroSection } from '@/components/hero/hero-section'
 
 const features = [
   {
@@ -44,109 +45,8 @@ export default function Home() {
     <main className="relative overflow-hidden">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen pt-32 pb-20">
-        {/* Background Effects */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        </div>
-
-        <Container className="flex flex-col items-center text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="flex flex-col items-center"
-          >
-            <motion.div variants={staggerItem}>
-              <Badge variant="outline" className="mb-6 px-4 py-1.5">
-                <Sparkles className="mr-2 h-3.5 w-3.5" />
-                Introducing VOXORA AI
-              </Badge>
-            </motion.div>
-
-            <motion.h1
-              variants={staggerItem}
-              className="max-w-4xl text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
-            >
-              The Future of{' '}
-              <span className="text-gradient">Voice AI</span>{' '}
-              is Here
-            </motion.h1>
-
-            <motion.p
-              variants={staggerItem}
-              className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
-            >
-              Experience intelligent voice interaction powered by cutting-edge AI. 
-              Seamlessly communicate, automate, and innovate with VOXORA.
-            </motion.p>
-
-            <motion.div
-              variants={staggerItem}
-              className="mt-10 flex flex-wrap items-center justify-center gap-4"
-            >
-              <Button size="lg" className="gap-2">
-                Start Free Trial
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Watch Demo
-              </Button>
-            </motion.div>
-
-            <motion.div
-              variants={staggerItem}
-              className="mt-8 flex items-center gap-8 text-sm text-muted-foreground"
-            >
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-green-500" />
-                No credit card required
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-green-500" />
-                14-day free trial
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Hero Visual */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative mt-20 w-full max-w-4xl"
-          >
-            <div className="glass glow-primary rounded-2xl p-8">
-              <motion.div
-                animate={floatAnimation}
-                className="flex items-center justify-center"
-              >
-                <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-primary/20">
-                  <div className="absolute inset-0 animate-ping rounded-full bg-primary/20" />
-                  <div className="absolute inset-4 rounded-full bg-primary/30" />
-                  <Mic className="relative h-12 w-12 text-primary" />
-                </div>
-              </motion.div>
-              <div className="mt-8 space-y-3">
-                <div className="h-3 w-full rounded-full bg-muted">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: '75%' }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="h-full rounded-full bg-primary"
-                  />
-                </div>
-                <div className="flex justify-between text-sm text-muted-foreground">
-                  <span>Listening...</span>
-                  <span>AI Processing</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
+      {/* Cinematic Hero Section with 3D AI Orb */}
+      <HeroSection />
 
       {/* Features Section */}
       <Section id="features" className="border-t border-border bg-card/30">
